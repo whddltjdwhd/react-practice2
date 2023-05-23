@@ -1,10 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import ShowForm from "./Form/ShowForm";
+import UserList from "./UserList/UserList";
 
 function App() {
   return (
-    <div className="App">
-        HI!
+    <div>
+      <ShowForm/>
+      <UserList/>
     </div>
   );
 }
