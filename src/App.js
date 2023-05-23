@@ -13,9 +13,16 @@ function App() {
 }];
 
 const [users, setUsers] = useState(DUMMY);
+
+const createData = (inputData) => {
+  setUsers((prevData) => {
+    return [inputData, ...prevData];
+  })
+}
+console.log(users);
   return (
     <div>
-      <ShowForm/>
+      <ShowForm newData={createData}/>
       <UserList list={users}/>
     </div>
   );
