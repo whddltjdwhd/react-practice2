@@ -1,12 +1,15 @@
 import {useState} from "react";
 
+
 function ShowForm(props) {
     const [name, setName] = useState("");
     const [age, setAge] = useState("");
     
     const submitHandler = (e) => {
         e.preventDefault();
-        AbleToSubmit();
+
+        if(!AbleToSubmit()) return;
+
         const id = Math.floor(Math.random() * 1000) + 1
         
         const newUser = {
@@ -22,12 +25,9 @@ function ShowForm(props) {
     }
 
     const AbleToSubmit = () => {
-        if(name.trim().length === 0 || age.length === 0) {
-            alert("빈칸을 채워주십시오.");
-            return;
-        } else if(age < 0) {
-            alert("음수 이상의 나이를 입력하십시오.");
-            return;
+        if(name.trim().length === 0 || age.length === 0 || age < 0) {
+            props.checkAlert(false);
+            return false;
         }
     }
 
