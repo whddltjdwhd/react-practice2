@@ -1,6 +1,13 @@
-function UserList() {
+import User from "./User";
+
+
+function UserList(props) {
+
+
     return(
-        "this is user List"
+        <div>
+            <User list={props.list}/>
+        </div>
     );
 }
 
