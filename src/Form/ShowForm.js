@@ -6,7 +6,7 @@ function ShowForm(props) {
     
     const submitHandler = (e) => {
         e.preventDefault();
-
+        AbleToSubmit();
         const id = Math.floor(Math.random() * 1000) + 1
         
         const newUser = {
@@ -19,6 +19,16 @@ function ShowForm(props) {
 
         setAge('');
         setName('');
+    }
+
+    const AbleToSubmit = () => {
+        if(name.trim().length === 0 || age.length === 0) {
+            alert("빈칸을 채워주십시오.");
+            return;
+        } else if(age < 0) {
+            alert("음수 이상의 나이를 입력하십시오.");
+            return;
+        }
     }
 
     const nameChangeHandler = e => setName(e.target.value);
