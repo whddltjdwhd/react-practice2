@@ -1,6 +1,6 @@
 import {useState} from "react";
 import ShowForm from "./Form/ShowForm";
-import UserList from "./UserList/UserList";
+import User from "./UserList/User";
 
 function App() {
   const DUMMY = [{
@@ -23,7 +23,7 @@ console.log(users);
   return (
     <div>
       <ShowForm newData={createData}/>
-      <UserList list={users}/>
+      <User list={users}/>
     </div>
   );
 }
