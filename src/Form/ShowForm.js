@@ -1,8 +1,8 @@
 import {useState} from "react";
 
 function ShowForm(props) {
-    const [name, setName] = useState();
-    const [age, setAge] = useState();
+    const [name, setName] = useState("");
+    const [age, setAge] = useState("");
     
     const submitHandler = (e) => {
         e.preventDefault();
@@ -10,12 +10,15 @@ function ShowForm(props) {
         const id = Math.floor(Math.random() * 1000) + 1
         
         const newUser = {
-            userName: name,
-            userAge: age,
-            userId: id
+            name: name,
+            age: age,
+            id: id
         }
 
         props.newData(newUser);
+
+        setAge('');
+        setName('');
     }
 
     const nameChangeHandler = e => setName(e.target.value);
@@ -25,10 +28,10 @@ function ShowForm(props) {
     return (
         <form onSubmit={submitHandler}>
             <label>UserName</label>
-            <input type="text" onChange={nameChangeHandler}></input>
+            <input type="text" value={name} onChange={nameChangeHandler}></input>
 
             <label>Age</label>
-            <input type="number" onChange={ageChangeHandler}></input>
+            <input type="number" value={age} onChange={ageChangeHandler}></input>
 
             <button>Add User</button>
         </form>
