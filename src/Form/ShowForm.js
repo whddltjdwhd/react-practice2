@@ -7,6 +7,9 @@ function ShowForm(props) {
     
     const submitHandler = (e) => {
         e.preventDefault();
+        
+        setAge('');
+        setName('');
 
         if(!AbleToSubmit()) return;
 
@@ -19,9 +22,6 @@ function ShowForm(props) {
         }
 
         props.newData(newUser);
-
-        setAge('');
-        setName('');
     }
 
     const AbleToSubmit = () => {
