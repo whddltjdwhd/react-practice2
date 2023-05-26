@@ -8,7 +8,7 @@ function ShowForm(props) {
     const submitHandler = (e) => {
         e.preventDefault();
 
-        if(AbleToSubmit()) return;
+        if(!AbleToSubmit()) return;
 
         const id = Math.floor(Math.random() * 1000) + 1
         
@@ -28,6 +28,9 @@ function ShowForm(props) {
         if(name.trim().length === 0 || age.length === 0 || age < 0) {
             props.checkAlert(false);
             return false;
+        } else {
+            props.checkAlert(true);
+            return true;
         }
     }
 

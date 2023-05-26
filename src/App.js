@@ -27,8 +27,8 @@ const createData = (inputData) => {
 
 const checkShowAlert = (check) => {
   if(!check) setContent(<ShowAlert/>);
+  else setContent("");
 }
-
 
 
 console.log(users);
