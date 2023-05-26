@@ -8,7 +8,7 @@ function ShowForm(props) {
     const submitHandler = (e) => {
         e.preventDefault();
 
-        if(!AbleToSubmit()) return;
+        if(AbleToSubmit()) return;
 
         const id = Math.floor(Math.random() * 1000) + 1
         
