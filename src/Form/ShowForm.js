@@ -25,13 +25,16 @@ function ShowForm(props) {
     }
 
     const AbleToSubmit = () => {
-        if(name.trim().length === 0 || age.length === 0 || age < 0) {
-            props.checkAlert(false);
+        if(name.trim().length === 0 || age.length === 0) {
+            props.checkAlert(false, "입력칸이 비어있음.");
             return false;
-        } else {
-            props.checkAlert(true);
-            return true;
-        }
+        } else if(age < 0) {
+            props.checkAlert(false, "나이가 음수임.");
+            return false;
+        } 
+
+        props.checkAlert(true);
+        return true;
     }
 
     const nameChangeHandler = e => setName(e.target.value);

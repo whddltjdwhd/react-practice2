@@ -15,7 +15,6 @@ function App() {
 
 
 const [users, setUsers] = useState(DUMMY);
-// const [alertVisible, setAlertVisible] = useState(false);
 const [content, setContent] = useState("");
 
 
@@ -25,9 +24,10 @@ const createData = (inputData) => {
   })
 }
 
-const checkShowAlert = (check) => {
-  if(!check) setContent(<ShowAlert showFunc={showContent}/>);
+const checkShowAlert = (check, type) => {
+  if(!check) setContent(<ShowAlert showFunc={showContent} AlertType={type}/>);
 }
+
 
 const showContent = () => setContent("");
 

@@ -1,7 +1,7 @@
 function ShowAlert(props) {
-    let alretMent = "hey";
-
     const onClickHandler = () => props.showFunc();
+    let alertWord = props.AlertType;
+ 
 
     return (
         <div>
@@ -9,7 +9,7 @@ function ShowAlert(props) {
                 <h2>Invalid Input</h2>
             </div>
             <div>
-                {alretMent}
+                {alertWord}
             </div>
             <div>
                 <button onClick={onClickHandler}>Okay</button>
