@@ -1,5 +1,8 @@
-function ShowAlert() {
+function ShowAlert(props) {
     let alretMent = "hey";
+
+    const onClickHandler = () => props.showFunc();
+
     return (
         <div>
             <div>
@@ -9,7 +12,7 @@ function ShowAlert() {
                 {alretMent}
             </div>
             <div>
-                <button>Okay</button>
+                <button onClick={onClickHandler}>Okay</button>
             </div>
         </div>
     )
