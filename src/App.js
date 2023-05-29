@@ -2,6 +2,7 @@ import { useState } from "react";
 import ShowForm from "./Form/ShowForm";
 import User from "./UserList/User";
 import ShowAlert from "./Form/ShowAlert";
+import './App.css';
 
 function App() {
   const DUMMY = [
@@ -35,9 +36,9 @@ function App() {
 
   console.log(users);
   return (
-    <div>
-      <ShowForm newData={createData} checkAlert={checkShowAlert} />
-      <div>
+    <div className="container">
+      <ShowForm newData={createData} checkAlert={checkShowAlert}/>
+      <div className="list">
         <User list={users} />
       </div>
       {content}

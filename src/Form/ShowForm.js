@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './ShowForm.css';
 
 function ShowForm(props) {
   const [name, setName] = useState("");
@@ -40,11 +41,11 @@ function ShowForm(props) {
   const ageChangeHandler = (e) => setAge(e.target.value);
 
   return (
-    <form onSubmit={submitHandler}>
-      <label>UserName</label>
+    <form onSubmit={submitHandler} className="form">
+      <label className="nameLabel">UserName</label>
       <input type="text" value={name} onChange={nameChangeHandler}></input>
 
-      <label>Age</label>
+      <label className="ageLabel">Age</label>
       <input type="number" value={age} onChange={ageChangeHandler}></input>
 
       <button>Add User</button>
