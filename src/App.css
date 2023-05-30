@@ -1,22 +1,3 @@
 body {
     background-color: rgb(39, 38, 38);
 }
-.container {
-    background-color: rgb(39, 38, 38);
-    max-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.list {
-    background-color: rgb(255, 255, 255);
-    border-radius: 5px;
-    padding: 0 25px;
-    width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}

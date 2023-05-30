@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ShowForm from "./Form/ShowForm";
 import User from "./UserList/User";
-import ShowAlert from "./Form/ShowAlert";
+import ErrorModal from "./UI/ErrorModal";
 import './App.css';
 
 function App() {
@@ -28,19 +28,17 @@ function App() {
   };
 
   const checkShowAlert = (check, type) => {
-    if (!check)
-      setContent(<ShowAlert showFunc={showContent} AlertType={type} />);
+    if (!check) setContent(<ErrorModal showFunc={showContent} content={type} title="Invalid Input"/>);
   };
 
   const showContent = () => setContent("");
 
   console.log(users);
   return (
-    <div className="container">
+    <div>
       <ShowForm newData={createData} checkAlert={checkShowAlert}/>
-      <div className="list">
-        <User list={users} />
-      </div>
+      
+      <User list={users} />
       {content}
     </div>
   );

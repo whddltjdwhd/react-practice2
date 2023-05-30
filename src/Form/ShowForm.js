@@ -1,5 +1,7 @@
 import { useState } from "react";
-import './ShowForm.css';
+import Card from "../UI/Card";
+import Button from "../UI/Button";
+import classes from "./ShowForm.module.css";
 
 function ShowForm(props) {
   const [name, setName] = useState("");
@@ -41,15 +43,17 @@ function ShowForm(props) {
   const ageChangeHandler = (e) => setAge(e.target.value);
 
   return (
-    <form onSubmit={submitHandler} className="form">
-      <label className="nameLabel">UserName</label>
-      <input type="text" value={name} onChange={nameChangeHandler}></input>
+    <Card className={classes.input}>
+      <form onSubmit={submitHandler}>
+        <label>UserName</label>
+        <input type="text"  value={name} onChange={nameChangeHandler}></input>
 
-      <label className="ageLabel">Age</label>
-      <input type="number" value={age} onChange={ageChangeHandler}></input>
+        <label>Age</label>
+        <input type="number"  value={age} onChange={ageChangeHandler}></input>
 
-      <button>Add User</button>
-    </form>
+        <Button type="submit">Add User</Button>
+      </form>
+    </Card>
   );
 }
 
